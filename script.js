@@ -1,32 +1,9 @@
-const respNav = document.getElementById("respNav");
-const respMenu = document.getElementById("resMenu")
 
-// respNav.style.display = "none"
+// const reset = document.getElementById("reset").addEventListener("click",()=>{
 
-respMenu.addEventListener("click",()=>{
+//    const confirmacion =  confirm( "quieres borrar este contenido?");
 
-    respNav.classList.toggle("showMe")
-
-})
-
-
-
-
-
-
-
-
-
-
-
-
-const reset = document.getElementById("reset").addEventListener("click",()=>{
-
-   const confirmacion =  confirm( "quieres borrar este contenido?");
-
- 
-
-});
+//  });
 
 // FORMULARIO DE CONTACTO
 const btn = document.getElementById('button');
@@ -37,7 +14,7 @@ document.getElementById('form')
 
    btn.value = 'enviando...';
 
-   const serviceID = 'default_service';
+      const serviceID = 'default_service';
    const templateID = 'template_ud00jsu';
 
    emailjs.sendForm(serviceID, templateID, this)
@@ -49,5 +26,7 @@ document.getElementById('form')
       alert(JSON.stringify(err));
     });
 });
+
+
 
 

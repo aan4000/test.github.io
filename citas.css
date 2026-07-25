@@ -8,10 +8,12 @@ body {
 
 /* GRID PRINCIPAL */
 .formulario_citas {
-    display: flex;
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
     gap: 4rem;
-    width: 100%;
-    padding: 2rem;
+    width:100%;
+    padding: 1rem;
     border-radius: 1rem;
     
     
@@ -46,6 +48,7 @@ label {
 
 h2 {
     color: white;
+    text-align: center;
     font-size: 32px;
     border-bottom: solid black 1px;
     text-shadow: 1px 1px 2px black;
@@ -83,7 +86,9 @@ details {
        background-size: 100%  100%;
        background-position: top  bottom;
        background-repeat: no-repeat;
-
+       gap: 5px;
+     max-width: 40vw;
+     margin: 10px auto;
     padding: 0.5rem;
     border-radius: 8px;
     transition: 0.3s ease;
@@ -208,12 +213,36 @@ details p {
 
 
 /* RESPONSIVE */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 668px) {
+
+    body{
+        display: grid;
+        place-items:center;
+        overflow: hidden;
+        width: 100%;
+        scroll-behavior: smooth;
+        padding: 5em;
+        right: 0;
+        left: 0;
+
+    } 
 
     .formulario_citas {
+        width: 20vw;
+        display: grid;
+        justify-content: center;
         flex-direction: column;
-        gap: 2rem;
-        padding: 1rem;
+        justify-content: space-around;
+        gap: 2rem 7em;
+        padding: 5rem;
+        margin: auto;
+    
+    }
+
+    form{
+        width: 100%;
+        margin: auto;
+        gap: 20px 12px;
     }
 
     .campos,
@@ -249,6 +278,7 @@ details p {
         font-display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         padding: 1em;
 
     }
