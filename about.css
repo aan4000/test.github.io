@@ -1,82 +1,128 @@
-/* Fondo general con textura médica */
+/* Variables para mantener consistencia y facilidad de mantenimiento */
+:root {
+  --primary-medical: #0A4A6A;
+  --primary-hover: #0d5c85;
+  --text-color: #333333;
+  --bg-gradient: linear-gradient(135deg, #f7f9fb 0%, #e8f4fa 100%);
+  --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 22px rgba(0, 0, 0, 0.12);
+  --radius-card: 14px;
+  --radius-btn: 8px;
+}
+
+/* Base global */
 body {
-    background: linear-gradient(135deg, #f7f9fb 0%, #e8f4fa 100%);
-    font-family: 'Inter', sans-serif;
+  background: var(--bg-gradient);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
 }
 
-/* Grid */
+/* Layout Grid centrado */
 .about-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
-    max-width: 1300px;
-    margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem 1.5rem;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
-/* Tarjetas estilo médico */
+/* Tarjeta médica */
 .card {
-    background: #ffffff;
-    padding: 2rem;
-    border-radius: 14px;
-    border-left: 6px solid #0A4A6A; /* borde médico */
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    transition: transform .2s ease, box-shadow .2s ease;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: var(--radius-card);
+  border-left: 6px solid var(--primary-medical);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Hover profesional */
 .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
 }
 
-/* Títulos */
+/* Títulos con icono integrados */
 .card h2 {
-    margin-bottom: 1rem;
-    font-size: 1.7rem;
-    color: #0A4A6A;
-    font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+  color: var(--primary-medical);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-/* Texto */
-.card p, .card ul {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #333;
+.card h2::before {
+  content: "🦴";
+  font-size: 1.4rem;
 }
 
-/* Listas */
+/* Tipografía */
+.card p,
 .card ul {
-    padding-left: 1.2rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.card ul {
+  padding-left: 1.2rem;
+  margin-top: 0.8rem;
 }
 
 .card ul li {
-    margin-bottom: .6rem;
+  margin-bottom: 0.6rem;
 }
 
-/* Iconos médicos en títulos (opcional) */
-.card h2::before {
-    content: "🦴"; /* icono ortopédico */
-    margin-right: .5rem;
+/* Botón de regreso */
+.back-btn-container {
+  text-align: center;
+  width: 100%;
+  margin: 1.5rem 0 3rem;
 }
-
 
 .back-btn {
-    display: inline-block;
-    margin: 2rem auto;
-    padding: 0.8rem 1.6rem;
-    background-color: #0A4A6A; /* azul médico */
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    transition: background-color .2s ease, transform .2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.8rem;
+  background-color: var(--primary-medical);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: var(--radius-btn);
+  box-shadow: var(--shadow-sm);
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-/* Hover */
 .back-btn:hover {
-    background-color: #0d5c85;
-    transform: translateY(-3px);
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* Adaptación responsive (Móviles / Pantallas pequeñas) */
+@media (max-width: 600px) {
+  .about-grid {
+    grid-template-columns: 1fr; /* Fuerza 1 sola columna en móviles */
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .back-btn {
+    display: block; /* Se vuelve bloque ocupando el ancho deseado */
+    width: calc(100% - 3rem);
+    margin: 0 auto;
+    text-align: center;
+  }
 }

@@ -1,31 +1,32 @@
-
-// const reset = document.getElementById("reset").addEventListener("click",()=>{
-
-//    const confirmacion =  confirm( "quieres borrar este contenido?");
-
-//  });
-
 // FORMULARIO DE CONTACTO
-const btn = document.getElementById('button');
 
-document.getElementById('form')
- .addEventListener('submit', function(event) {
-   event.preventDefault();
+const btnContacto = document.getElementById('button');
+const formContacto = document.getElementById('form');
 
-   btn.value = 'enviando...';
+if (formContacto && btnContacto) {
+  formContacto.addEventListener('submit', function (event) {
+    event.preventDefault();
 
-      const serviceID = 'default_service';
-   const templateID = 'template_ud00jsu';
+    btnContacto.value = 'Enviando...';
 
-   emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
-      btn.value = 'Send Email';
-      alert('SU MENSAJE FUE ENVIADO!');
-    }, (err) => {
-      btn.value = 'Send Email';
-      alert(JSON.stringify(err));
-    });
-});
+    const serviceID = 'default_service';
+    const templateID = 'template_ud00jsu';
+
+    emailjs.sendForm(serviceID, templateID, this)
+      .then(() => {
+        btnContacto.value = 'Enviar mensaje';
+        alert('¡Su mensaje fue enviado correctamente!');
+      })
+      .catch((err) => {
+        btnContacto.value = 'Enviar mensaje';
+        alert('Ocurrió un error al enviar el mensaje. Intente nuevamente.');
+        console.error(err);
+      });
+  });
+}
+
+
+
 
 
 

@@ -21,6 +21,13 @@ body{
     
 }
 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
 
 
 
@@ -41,8 +48,18 @@ body{
 
 .menu-principal{
 
-    transition: all 1s ease;
+    transition: all .65s ease;
 }
+
+
+.resp_mobile{
+
+display: none;}
+
+
+
+
+
 
 .contact_body{
 
@@ -132,8 +149,8 @@ header {
         color: white;
         text-shadow: 1px 2px 7px rgb(1, 0, 8);
         text-align: center;
-        position: sticky;
-        z-index: 999;
+        position: relative;
+      
     }
 
     p span {
@@ -191,16 +208,7 @@ header {
 =========================== */
 
 nav{
-   
 
-
-
-
-
-
-
-
-  
 
     grid-area:nav;
     top: 0;
@@ -210,7 +218,7 @@ nav{
     justify-content: center;
        background:linear-gradient(
         90deg,
-        #EABAA5 30px,
+        #744532 30px,
         
        #49E9  90%
     );
@@ -301,7 +309,10 @@ nav{
    MAIN
 =========================== */
 
+
 main{
+
+
 
     grid-area:main;
     background:linear-gradient(
@@ -344,10 +355,11 @@ main{
     display:flex;
     flex-direction:column; 
     justify-content: first baseline; 
-    padding: 2em;
+    padding: 1em;
     width: 65%;
     translate: 0;
-    h2{
+
+     h2{
       
       font-size:50px;
       color:rgb(255, 255, 255);
@@ -358,6 +370,13 @@ main{
       animation-timeline:view();
       animation-range:entry 10% cover 50%;
   }
+
+
+
+
+
+
+ 
 
   p{
     
@@ -403,7 +422,7 @@ main{
 
     font-size:18px;
 
-    color:#444;
+    color:#020202;
 }
 
 /* ===========================
@@ -481,7 +500,7 @@ main{
 .bottom_section img{
 
     width:350px;
-
+    background: white;
     height:220px;
 
     object-fit:cover;
@@ -514,7 +533,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;      
-    width: 60%;
+    width: 90%;
     height: 40%;              
     max-width: 600px;         
     margin: 0 auto;           
@@ -524,6 +543,19 @@ main{
     box-shadow: 1px 2px 5px black;
 }
 
+
+.mapa-contact{
+
+    margin:15% auto;
+    position:absolute;
+    right:30px;
+    width:30vw;
+}
+
+
+.mapa-contact,.mapa-contact{
+    margin: 5px;
+}
 
 
 .contacto-item {
@@ -560,10 +592,73 @@ main{
 
 
 
+/* CONTACTANOS */
+
+.retorno{
+
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    font-family: sans-serif;
+    color: rgb(255, 255, 255);
+    background: rgb(56, 56, 182);
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 5px;
+    left: 9px;
+    position: absolute;
+    border: none;
+    transition: .60s ease-in-out;
+
+
+}
+
+
+.retorno:hover{
+  
+    background: linear-gradient(to right,rgb(241, 112, 73), rgb(0, 38, 53));
+    
+}
 
 
 
+ /* ?BOTON DE RETORNO  */
 
+
+     .retorno{
+
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    font-family: sans-serif;
+    color: rgb(255, 255, 255);
+    background: rgb(56, 56, 182);
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 5px;
+    left: 9px;
+    position: absolute;
+    border: none;
+    transition: .60s ease-in-out;
+
+
+}
+
+.cont{
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 1px 2px 2px black;
+    margin: 5px;
+    width: 60vw;
+}
+
+.retorno:hover{
+  
+    background: linear-gradient(to right,rgb(241, 112, 73), rgb(0, 38, 53));
+    
+}
 
 
 
@@ -618,13 +713,25 @@ footer p{
     display:block;
     width: 100%;
     height: 80vh;
-    background: #e2b1b194;
+    background: #ffffff;
     z-index: 999;
     text-align: center;    
     transition: all 1s ease;
-
-
    }  
+
+    
+
+    h2{
+      
+      font-size:10px;
+      color:rgb(255, 255, 255);
+      text-shadow: 1px 1px 2px black;
+      width: 100%;
+      filter:drop-shadow(1px 1px 2px black);  
+      animation:efecto_specialismos 1.5s;
+      animation-timeline:view();
+      animation-range:entry 10% cover 50%;
+  }
 
 
      #close{
@@ -634,6 +741,64 @@ footer p{
     position: relative;
     z-index: 999;
    } 
+
+
+    /* ?BOTON DE RETORNO  */
+
+
+     .retorno{
+
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    font-family: sans-serif;
+    color: rgb(255, 255, 255);
+    background: rgb(56, 56, 182);
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 5px;
+    left: 9px;
+    position: absolute;
+    border: none;
+    transition: .60s ease-in-out;
+
+
+}
+
+.cont{
+    padding: 1em;
+    background-color: rgba(255, 251, 0, 0.205);
+    border-radius: 10px;
+    box-shadow: 1px 2px 2px black;
+    margin: 10px auto;
+}
+
+.retorno:hover{
+  
+    background: linear-gradient(to right,rgb(241, 112, 73), rgb(0, 38, 53));
+    
+}
+
+ .text-desc{
+
+        font-size: 2px;
+    }
+
+
+
+   
+    .resp_mobile{
+
+        display: block;
+    }
+
+
+
+
+
+
+
   
 
 
@@ -642,7 +807,7 @@ footer p{
 
 .menu-principal{
 
-    display: block;
+    display: none;
     transition: all 1s ease;
     font-size: 30px;
     margin: 2em;
@@ -794,7 +959,6 @@ footer p{
         height:auto;
     }
 }
-
 /* CONTACTAME */
 
 .form_wrapper {
@@ -803,29 +967,35 @@ footer p{
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
     text-transform: capitalize;
-    
+
     width: 60vw;
+    max-width: 600px;
     padding: 2em 1em;
     border-radius: 10px;
+
+    margin: 40px auto; /* reemplaza absolute + translate y crea espacio */
+    position: relative; /* evita romper el responsive */
+
     
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+
     
 }
+
 form > h2 {
     font-family: Georgia, 'Times New Roman', Times, serif; 
     font-weight: 800;
     font-size: 4rem;
-    color: white;   
+    color: white;
+    text-align: center;
 }
 
 .field {
     margin: 20px auto;
+    width: 100%;
 }
 
 .field label {
@@ -836,27 +1006,22 @@ form > h2 {
 
 .field input {
     display: block;
-    min-width: 30vw;
+    width: 100%;
     line-height: 1.5;
     font-size: 14px;
     border-radius: 10px;
     border: none;
-}
-
-.form_wrapper > input {
-    width: 100%;
-}
-
-input[type="text"] {
-    padding: 0.50em;
+    padding: .60em;
 }
 
 textarea {
-    width:100%; 
+    width: 100%;
     border-radius: 5px;
+    padding: .60em;
 }
 
-input[type="submit"], [type="reset"] {
+input[type="submit"], 
+input[type="reset"] {
     display: inline-block;
     padding: 12px 40px;
     margin: 5px;
@@ -882,33 +1047,34 @@ input[type="submit"], [type="reset"] {
 
 /* SECCION PARA CITAS */
 
-.mapa{
-
-    float: right;
-    margin: 60px  20px;
-    border-radius: 10%;
+.mapa-contact {
+    display: flex;
+    justify-self: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 30px auto; /* crea espacio entre formulario y mapa */
+    border-radius: 10px;
     box-shadow: 1px 2px 5px black;
+    display: block;
+    padding: 1em;
+
+      left: 0;
+        right: 0;
 }
 
-
-frame{
-
-   border-radius: 10px;
+frame {
+   border-radius: 1px;
 }
-
-
-
-
 
 /* Ícono del menú */
 #resMenu {
     font-size: 40px;
     cursor: pointer;
-    display: none; /* solo móvil */
+    display: none;
     position: absolute;
     right: 20px;
     top: 20px;
-    z-index: 9999; /* MUY IMPORTANTE */
+    z-index: 9999;
     background: none;
     border: none;
     padding: 5px;
@@ -922,50 +1088,196 @@ frame{
     background: #fff;
 }
 
- #close {
+#close {
     display: none;
 }
 
 /* MODO RESPONSIVE */
 @media (max-width: 768px) {
 
-    
+  /* Oculta el menú de escritorio en móvil */
+@media (max-width: 768px) {
+
+    .menu-principal {
+        display: none;
+    }
+
+    /* Estilos del menú responsive */
+    .resp_mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2em;
+        margin: 2em auto;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+    }
+
+    .resp_mobile li {
+        list-style: none;
+    }
+
+    .resp_mobile a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.3em;
+        text-decoration: none;
+        color: rgb(5, 35, 90);
+        font-size: 22px;
+        font-weight: 500;
+    }
+
+    .resp_mobile ion-icon {
+        font-size: 30px;
+        color: rgb(5, 35, 90);
+    }
+
+    /* Submenu */
+    .submenu {
+        display: none;
+        flex-direction: column;
+        gap: 0.5em;
+        margin-top: 0.5em;
+    }
+
+    .tiene-submenu:hover .submenu {
+        display: flex;
+    }
+}
+
+    /* FORMULARIO RESPONSIVE */
+    .form_wrapper {
+        width: 90vw;
+        padding: 1.5em 1em;
+        margin-top: 20px;
+    }
+
    
+  
+    .resp_mobile{
+        display:block;
+    }
+   
+
+
+    form > h2 {
+        font-size: 2.8rem;
+    }
+
+    /* MAPA DEBAJO DEL FORMULARIO */
+    .mapa-contact {
+        width: 100vw;
+        max-width: 100%;
+        height:auto;
+        margin-top:100px;
+        float: none; /* elimina el float que rompía el responsive */
+        left: 0;
+        right: 0;
+    }
+    
+    /* ?BOTON DE RETORNO  */
+
+
+     .retorno{
+
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    font-family: sans-serif;
+    color: rgb(255, 255, 255);
+    background: rgb(56, 56, 182);
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 5px;
+    left: 9px;
+    position: absolute;
+    border: none;
+    transition: .60s ease-in-out;
+
+
+}
+
+.cont{
+    padding: 1em;
+    background-color: rgba(255, 251, 0, 0.205);
+    border-radius: 10px;
+    box-shadow: 1px 2px 2px black;
+    margin: 5px;
+}
+
+.retorno:hover{
+  
+    background: linear-gradient(to right,rgb(241, 112, 73), rgb(0, 38, 53));
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     #close {
         display: block;
         position: absolute;
         padding: 5px;
         top: 10px;
-        right: 10px;
+        right: 30px;
         z-index: 9999;
-        border-radius: 5px;
-        color: rgb(230, 25, 25);
+        border-radius: 5px;      
         border: none;
-        font-size: 34px;
+        font-size: 30px;
+        cursor: pointer;
         background: none;
-        font-weight: 600;
+        font-weight: 200;
+        transition: .65s ease-in-out;
     }
 
-
+    #close:hover{color: red;}
 
     #resMenu {
         display: block;
-        z-index: 1;
+        z-index: 999;
     }
 
-   
-    
     #respNav {
-        display:none ;
-        flex-direction: column;
-        width: 100%;
-        background: white;
-        padding: 20px;
-    }
-    
-    #respNav.showMe {
         display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 80%;
+        height: 100vh;
+        background: rgba(247, 244, 244, 0.979);
+        padding: 20px;
+        transform: translateX(-100%);
+        transition: transform .3s ease;
+        z-index: 999;
     }
-    
-}
 
+    #respNav.showMe {
+        transform: translateX(0);
+        width: 100%;
+    }
+}

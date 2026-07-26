@@ -8,7 +8,9 @@
     <title>Dra. Heydy Rodriguez</title>
 
     
+    <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
      <!-- icons -->
+     <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
 
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
 
@@ -57,13 +59,15 @@
 
     <!-- ================= NAV ================= -->
     <nav id="respNav">
-        <ul class="menu-principal">
+        <ul class="menu-principal ">
             <li><a href="#">Página Principal</a></li>
 
-            <li class="tiene-submenu">
+            <li class="tiene-submenu ">
                 <a href="#">Servicios ▾</a>
                 <ul class="submenu">
                     <li><a href="#">Reducción Abierta</a></li>
+
+
                     <li><a href="#">Fijaciones</a></li>
                     <li><a href="#">Tenosinovectomía</a></li>
                 </ul>
@@ -75,8 +79,60 @@
         </ul>
          
         <button id="close">X</button>
+
+       <!-- MENU RESPONSIVE -->
+<ul class="resp_mobile">
+    <li>
+        <a href="#">
+            <ion-icon name="home"></ion-icon>
+            Página principal
+        </a>
+    </li>
+
+    <li class="tiene-submenu">
+        <a href="#">
+            <ion-icon name="bandage"></ion-icon>
+            Servicios
+        </a>
+
+        <ul class="submenu">
+            <li><a href="#">Reducción Abierta</a></li>
+            <li><a href="#">Fijaciones</a></li>
+            <li><a href="#">Tenosinovectomía</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="about.html">
+            <ion-icon name="medkit"></ion-icon>
+            Acerca de mí
+        </a>
+    </li>
+
+    <li>
+        <a href="contactanos.html">
+            Contáctame
+            <ion-icon name="mail-open"></ion-icon>
+        </a>
+    </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
            
     </nav>
+
+
 
       <script>
          const btnMenu = document.getElementById("resMenu");
@@ -117,7 +173,7 @@
 
                 <section>
 
-                    <h2>
+                    <h2  class="text-desc" >
                        Ortopedia y medicina deportiva.
                         
                     </h2>
@@ -136,7 +192,7 @@
                 
                 
             </section>
-            <a   class="button_citas"   href="citas.html">Haz tu Cita  »</a>
+            <a   class="button_citas"   href="citas.html " target="_blank">Haz tu Cita  »</a>
             
             
 
