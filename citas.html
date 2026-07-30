@@ -17,6 +17,18 @@
 
     <div class="formulario_citas">
 
+
+         <section  id="showTerms">
+
+            <p>
+                   La información ingresada será utilizada exclusivamente para gestionar su solicitud, ya sea para agendar una cita o responder una consulta de contacto.Tratamiento de datos: Sus datos serán tratados de manera confidencial, conforme a nuestras políticas internas de protección de información, y no serán compartidos con terceros sin su autorización.Confirmación y alcance: El envío de este formulario no constituye una cita confirmada. La disponibilidad será verificada y confirmada por nuestros canales oficiales. Las consultas enviadas serán atendidas de acuerdo con nuestros tiempos de respuesta y no sustituyen una evaluación profesional.Consentimiento: Al marcar esta casilla, usted declara haber leído y aceptado estas condiciones, autorizando el uso de su información para los fines descritos.
+                
+               
+                <button id="bterms"    type="button">Aceptar</button>
+            </p>  
+         </section>
+
+
         
         
         <form id="form">
@@ -64,9 +76,21 @@
                 <label for="message"></label>
                 <textarea   type="text" name="message" id="message"  cols="40"  rows="8" placeholder="detalles de la cita"></textarea>
             </div>
+            <label for="terms">
+                <input type="checkbox" name="" id="terms">
+                <a  class="aterms"       href="#">terminos y condiciones</a>
+
+
+            </label>
+              
             <input  class="btn_citas" type="submit" id="button" value="Agendar Cita" >
+        
+
+
         </form>
 
+
+       
 
 
         <div class="horarios">
