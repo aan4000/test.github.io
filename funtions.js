@@ -1,6 +1,7 @@
 // PROGRAMAR CITAS
-// PROGRAMAR CITAS
-
+const terms = document.getElementById("terms");
+const showTerms = document.getElementById("showTerms");
+const btems = document.getAnimations("bterms")
 const formCitas = document.getElementById('form');
 const btnCitas = document.getElementById('button');
 
@@ -44,3 +45,23 @@ if (formCitas && btnCitas) {
       });
   });
 }
+
+
+
+terms.addEventListener("change",()=>{
+
+  showTerms.classList.toggle("active")
+
+});
+
+ btnCitas.disabled = true
+ btnCitas.style.opacity = "55%"
+ 
+ 
+ bterms.addEventListener("click",()=>{
+   
+   btnCitas.style.opacity = "1"
+    showTerms.style.display = "none"
+    btnCitas.disabled = false
+
+ });

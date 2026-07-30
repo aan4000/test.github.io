@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel="icon" type="img/png"  href="logo_Doctora.jpg">
     <title>Dra. Heydy Rodriguez</title>
 
     
@@ -58,18 +58,32 @@
     </header>
 
     <!-- ================= NAV ================= -->
+
+
     <nav id="respNav">
+
+        <img  class="logo" src="logo_Doctora.jpg" alt="Logo" srcset="">
+
         <ul class="menu-principal ">
             <li><a href="#">Página Principal</a></li>
 
             <li class="tiene-submenu ">
                 <a href="#">Servicios ▾</a>
-                <ul class="submenu">
-                    <li><a href="#">Reducción Abierta</a></li>
-
-
-                    <li><a href="#">Fijaciones</a></li>
-                    <li><a href="#">Tenosinovectomía</a></li>
+                <ul class="submenu  detalles">
+                    
+                    <h2>Detalles</h2>
+            <p>
+                <li>Consulta especializada en Ortopedia y Traumatología.</li>
+                <li>Evaluación y tratamiento de fracturas y lesiones traumáticas.</li>
+                <li>Atención de lesiones deportivas.</li>
+                <li>Diagnóstico y manejo del dolor musculoesquelético.</li>
+                <li>Tratamiento de tendinitis, bursitis y lesiones de tendones y ligamentos.</li>
+                <li>Manejo de artrosis y enfermedades degenerativas.</li>
+                <li>Evaluación de lesiones de hombro, codo, muñeca y mano.</li>
+                <li>Evaluación de lesiones de cadera, rodilla, tobillo y pie.</li>
+                <li>Infiltraciones articulares y de tejidos blandos.</li>
+                <li>Valoración preoperatoria y seguimiento postoperatorio.</li>
+            </p>
                 </ul>
             </li>
 
@@ -81,43 +95,51 @@
         <button id="close">X</button>
 
        <!-- MENU RESPONSIVE -->
-<ul class="resp_mobile">
-    <li>
-        <a href="#">
-            <ion-icon name="home"></ion-icon>
-            Página principal
-        </a>
-    </li>
-
-    <li class="tiene-submenu">
-        <a href="#">
-            <ion-icon name="bandage"></ion-icon>
-            Servicios
-        </a>
-
-        <ul class="submenu">
-            <li><a href="#">Reducción Abierta</a></li>
-            <li><a href="#">Fijaciones</a></li>
-            <li><a href="#">Tenosinovectomía</a></li>
-        </ul>
-    </li>
-
-    <li>
-        <a href="about.html">
-            <ion-icon name="medkit"></ion-icon>
-            Acerca de mí
-        </a>
-    </li>
-
-    <li>
-        <a href="contactanos.html">
-            Contáctame
-            <ion-icon name="mail-open"></ion-icon>
-        </a>
-    </li>
-</ul>
+        <div class="responsive_wrapper">
 
 
+            <ul class="resp_mobile">
+                <li>
+                    <a href="#">
+                        <ion-icon name="home"></ion-icon>
+                        Página principal
+                    </a>
+                </li>
+                
+                <li class="tiene-submenu">
+                    <a href="#">
+                        <ion-icon name="bandage"></ion-icon>
+                        Servicios
+                    </a>
+                    <div class="submenu">
+
+                        <ul >
+                            <li><a href="#">Reducción Abierta</a></li>
+                            <li><a href="#">Fijaciones</a></li>
+                            <li><a href="#">Tenosinovectomía</a></li>
+                        </ul>
+                    </div>
+
+                    
+                </li>
+                
+                <li>
+                    <a href="about.html">
+                        <ion-icon name="medkit"></ion-icon>
+                        Acerca de mí
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="contactanos.html">
+                        <ion-icon name="mail-open"></ion-icon>
+                        Contáctame
+                    </a>
+                </li>
+            </ul>
+            
+            
+        </div>
 
 
 
@@ -174,7 +196,7 @@
                 <section>
 
                     <h2  class="text-desc" >
-                       Ortopedia y medicina deportiva.
+                       Tu movilidad merece atencion reserva tu cita y empieza a sentirte mejor.
                         
                     </h2>
                     
@@ -201,18 +223,51 @@
         </main>
 
         <!-- ================= GALERÍA ================= -->
+<section class="bottom_section">
+  <div class="card">
+    <img src="operacion2.0.png" alt="Destino">
+    <div class="info">
+      <h3>titulo</h3>
+      <p>Describe el procedimiento .</p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="evaluacioncadera.png" alt="Destino">
+    <div class="info">
+      <h3>Evaluacion</h3>
+      <p>Evaluacion cadera, mano y pie .</p>
+    </div>
+  </div>
 
-        <div class="bottom_section">
-
-            <!-- <img src="/Img/1000505690.jpg" alt="Consulta médica"> -->
-
-            <img src="operacion.png" alt="Procedimiento quirúrgico">
-
-            <img src="1000505684.jpg" alt="Atención al paciente">
-
-            <img src="1000505686.jpg" alt="Especialidad en ortopedia">
-
-        </div>
+  <div class="card">
+    <img src="artrosis.png" alt="descrition">
+    <div class="info">
+      <h3>Terapia</h3>
+      <p>Manejo de Artrosis.</p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="1000505684.jpg" alt="descrition">
+    <div class="info">
+      <h3>titulo</h3>
+      <p>Discribe el procedimiento.</p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="procedimientoMano.png" alt="descrition">
+    <div class="info">
+      <h3>titulo</h3>
+      <p>Discribe el procedimiento.</p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="procedimiento1.png" alt="descrition">
+    <div class="info">
+      <h3>titulo</h3>
+      <p>Discribe el procedimiento.</p>
+    </div>
+  </div>
+</section>
 
         <!-- ================= FOOTER ================= -->
 

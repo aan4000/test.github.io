@@ -216,12 +216,7 @@ nav{
     z-index: 1;
     display: flex;
     justify-content: center;
-       background:linear-gradient(
-        90deg,
-        #744532 30px,
-        
-       #49E9  90%
-    );
+    background: rgba(12, 57, 153, 0.308);
 
     box-shadow: 1px 1px 2px black;
 }
@@ -265,45 +260,89 @@ nav{
     border-radius:5px;
     background-position:left bottom;
 }
-
 /* ===========================
    SUBMENU
 =========================== */
-
-.submenu{
-
-    display:none;
-    position:absolute;
-    padding: .50em;
-    top:100%;
-    left:0;
-    border-radius: 10px;
-    list-style:none;
-    box-shadow: 2px 2px 5px black;
-    background:#ffffff5d;
-    z-index:100;
-}
-
-.submenu li a{
-
-    display:block;
-
-     transition: 1s;
-
-    padding:12px 18px;
+.submenu {
+    position: fixed;
+    top: 60px; /* Ajusta a la altura de tu barra de navegación */
+    left: 0;
+    width: 100%;
     
+    padding: 2.5rem 10%; /* El 10% crea un margen interno elegante a los lados */
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    background: lch(100% 0.01 296.81 / 0.95); /* Aumentamos ligeramente la opacidad para mejor lectura */
+    backdrop-filter: blur(12px);
+    z-index: 100;
+
+    /* GRID DE 4 COLUMNAS IGUALES */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+
+    /* TRANSICIÓN */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity .35s ease, transform .3s ease;
 }
 
-.submenu li a:hover{
-
-    background:#7067f1de;
-    transition: 1s ease;
+.tiene-submenu:hover .submenu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
-.tiene-submenu:hover .submenu{
+/* --- ESTILOS PROFESIONALES DE CONTENIDO --- */
 
-    display:block;
+/* Estructura de cada columna */
+.submenu-columna {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
+
+/* Título de la columna */
+.submenu-titulo {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #6b7280; /* Gris sutil */
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.08); /* Línea divisoria discreta */
+}
+
+/* Lista de enlaces */
+.submenu-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Estilo de cada enlace */
+.submenu-lista a {
+    text-decoration: none;
+    color: #1f2937;
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: inline-block;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Efecto al pasar el cursor por los enlaces */
+.submenu-lista a:hover {
+    color: #2563eb; /* Color de acento (azul) */
+    transform: translateX(4px); /* Desplazamiento sutil a la derecha */
+}
+
 
 /* ===========================
    MAIN
@@ -478,57 +517,89 @@ main{
 /* ===========================
    BOTTOM
 =========================== */
-
-.bottom_section{
-
-    grid-area:bottom;
+.bottom_section {
+    grid-area: bottom;
     border: none;
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    flex-wrap:wrap;
-
-    gap:30px;
-
-    padding:60px 5%;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 60px 5%;
 }
 
-.bottom_section img{
+/* Tarjeta contenedora */
+.bottom_section .card {
+    position: relative;
+    width: 350px;
+    height: 220px;
+    border-radius: 10px;
+    overflow: hidden; /* Corta el contenido que sobresale */
+    
+    /* ANIMACIÓN AL ESCROLEAR (Aparece y sube suavemente) */
+    animation: revealScroll linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+}
 
-    width:350px;
+/* Animación de entrada al bajar en la página */
+@keyframes revealScroll {
+    from {
+        opacity: 0;
+        transform: translateY(50px); /* Empieza 50px abajo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);    /* Sube a su posición original */
+    }
+}
+
+/* Imagen base con ligera opacidad */
+.bottom_section .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; /* Centra la imagen dentro del contenedor */
     background: white;
-    height:220px;
-
-    object-fit:cover;
-
-    border-radius:10px;
-
-    transition:.4s;
-
-
-    img{
-        margin: center;
-    }
-
-    p{
-        display:flex;
-        justify-content: center;
-        justify-items: baseline;
-
-    }
+    opacity: 0.75;
+    transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-.bottom_section img:hover{
 
-    transform:scale(1.05);
-
-    box-shadow:0 10px 20px rgba(0,0,0,.3);
+/* Capa de información superpuesta (oculta por defecto) */
+.bottom_section .card .info {
+    position: absolute;
+    inset: 0; /* Ocupa todo el tamaño de la tarjeta */
+    background: rgba(0, 0, 0, 0.65); /* Fondo oscuro semitransparente para leer bien el texto */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    
+    opacity: 0; /* Escondido por defecto */
+    transition: opacity 0.4s ease;
 }
 
+/* EFECTOS AL HACER HOVER */
+.bottom_section .card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Al hacer hover, la imagen recupera opacidad total y escala suavemente */
+.bottom_section .card:hover img {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Al hacer hover, se revela la información */
+.bottom_section .card:hover .info {
+    opacity: 1;
+}
 .mapa-footer {
     display: flex;
     justify-content: center;
@@ -1098,12 +1169,37 @@ frame {
   /* Oculta el menú de escritorio en móvil */
 @media (max-width: 768px) {
 
+
+    .responsive_wrapper{
+
+       background-image:  linear-gradient(90deg, rgba(228, 207, 199, 0.664) 30px, rgba(68, 153, 238, 0.884) 90%),url("fondo_responsive.png") ;
+       background-position: center;      
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
     .menu-principal {
         display: none;
     }
 
     /* Estilos del menú responsive */
     .resp_mobile {
+
+        
         display: flex;
         flex-direction: column;
         gap: 1.2em;
@@ -1111,6 +1207,11 @@ frame {
         padding: 0;
         list-style: none;
         text-align: center;
+       
+      
+
+
+        
     }
 
     .resp_mobile li {
@@ -1121,28 +1222,43 @@ frame {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 0.3em;
+        gap: 0.60em;
         text-decoration: none;
         color: rgb(5, 35, 90);
-        font-size: 22px;
-        font-weight: 500;
+        font-size: 15px;
+        font-weight: 300;
+        text-shadow: 1px 1px 1px black ;
     }
 
     .resp_mobile ion-icon {
-        font-size: 30px;
-        color: rgb(5, 35, 90);
+
+        font-size: 70px;
+        color: rgb(235, 109, 78);
+        filter: drop-shadow(1px 2px 3px black);
+        
     }
 
+       li{
+        transform: scale(1);
+
+
+      }
+
+   
+    
     /* Submenu */
     .submenu {
         display: none;
-        flex-direction: column;
         gap: 0.5em;
-        margin-top: 0.5em;
+        position: relative;
+
+        margin: auto;
+        background: white;
     }
 
     .tiene-submenu:hover .submenu {
-        display: flex;
+        display: block;
+      
     }
 }
 
@@ -1200,6 +1316,7 @@ frame {
 }
 
 .cont{
+
     padding: 1em;
     background-color: rgba(255, 251, 0, 0.205);
     border-radius: 10px;
