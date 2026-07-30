@@ -1,3 +1,6 @@
+/* ==========================================================================
+   1. VARIABLES & ESTILOS BASE
+   ========================================================================== */
 :root {
     --color-bg-main: #f5f7fb;
     --color-primary: #4460AA;
@@ -17,8 +20,11 @@ body {
     font-family: var(--font-body);
 }
 
-/* GRID PRINCIPAL */
+/* ==========================================================================
+   2. CONTENEDOR PRINCIPAL
+   ========================================================================== */
 .formulario_citas {
+    position: relative; /* CRUCIAL: Marco de referencia para la posición absoluta de los términos */
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -30,13 +36,22 @@ body {
     border-radius: 1rem;
 }
 
-/* FORMULARIO */
+/* ==========================================================================
+   3. SECCIÓN FORMULARIO DE CITAS
+   ========================================================================== */
 .campos {
     flex: 1;
 }
 
 .field {
     margin-bottom: 1rem;
+}
+
+label {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    display: block;
+    margin-bottom: 0.3rem;
 }
 
 input[type="text"],
@@ -49,13 +64,7 @@ textarea {
     border-radius: var(--radius);
     border: none;
     font-size: 0.95rem;
-}
-
-label {
-    font-size: 0.95rem;
-    color: var(--color-text);
-    display: block;
-    margin-bottom: 0.3rem;
+    box-sizing: border-box;
 }
 
 h2 {
@@ -67,7 +76,7 @@ h2 {
     margin-bottom: 1.5rem;
 }
 
-/* Botón */
+/* Botón Formulario */
 .btn_citas {
     padding: 10px;
     border-radius: var(--radius);
@@ -87,13 +96,70 @@ h2 {
     transform: translateY(-2px);
 }
 
-/* HORARIOS */
+/* ==========================================================================
+   4. MODAL TÉRMINOS Y CONDICIONES (OVERLAY)
+   ========================================================================== */
+#showTerms {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el modal exactamente en el medio */
+    z-index: 100; /* Asegura que quede por encima del formulario y los horarios */
+    width: 90%;
+    max-width: 480px;
+    background: #ffffff;
+    color: #222222;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    display: none; /* Oculto inicialmente (actívalo agregando la clase .active con JS) */
+
+    .active{
+        display: block;
+    }
+
+}
+
+/* Estado activo para mostrarlo desde JS */
+#showTerms.active {
+    display: block;
+    animation: fade 0.3s ease;
+}
+
+#showTerms p {
+    margin: 0 0 1.5rem 0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    color: #333333;
+}
+
+#showTerms button {
+    display: block;
+    margin: 0 auto;
+    padding: 0.6rem 1.8rem;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition);
+}
+
+#showTerms button:hover {
+    background-color: var(--color-primary-dark);
+}
+
+/* ==========================================================================
+   5. SECCIÓN HORARIOS & ACORDEÓN
+   ========================================================================== */
 .horarios {
     flex: 1;
     padding: 1rem;
 }
 
-/* ACORDEÓN */
 details {
     margin: 1rem 0;
     background: var(--color-card-bg);
@@ -105,12 +171,11 @@ details {
     box-shadow: 0 3px 10px rgba(0,0,0,0.2);
 }
 
-/* ELIMINAR ICONO NATIVO */
+/* Eliminar ícono nativo del summary */
 summary::-webkit-details-marker {
     display: none;
 }
 
-/* ÍCONO + / - */
 summary {
     cursor: pointer;
     font-size: 1rem;
@@ -120,8 +185,10 @@ summary {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--color-text);
 }
 
+/* Ícono personalizado + / - */
 summary::before {
     content: "+";
     position: absolute;
@@ -161,21 +228,33 @@ img {
     width: 70px;
     max-width: 100%;
     border-radius: 10px;
-    opacity: 75%;
+    opacity: 0.75;
 }
 
-/* Animación contenido */
+/* Animaciones */
 details p {
     padding: 0.5rem 0;
     animation: fade 0.3s ease;
 }
 
 @keyframes fade {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { 
+        opacity: 0; 
+        transform: translateY(-5px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
 }
 
-/* RESPONSIVE */
+.aterms{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+/* ==========================================================================
+   6. RESPONSIVE DESIGN (DISPOSITIVOS MÓVILES)
+   ========================================================================== */
 @media screen and (max-width: 768px) {
     body {
         padding: 1.5rem;
@@ -210,19 +289,8 @@ details p {
         text-align: center;
     }
 
-    img {
-    width: 70px;
-    max-width: 100%;
-    border-radius: 10px;
-    opacity: 75%;
-
-}
-
-}
-
-/* TERMINOS Y CONDICIONES */
-
-#showTearms{
-
-z-index: 999;
+    #showTerms {
+        width: 95%;
+        padding: 1.5rem;
+    }
 }
