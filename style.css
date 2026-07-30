@@ -223,7 +223,7 @@ nav {
     text-align: center;
     box-shadow: 1px 1px 2px black;
     /* QUITAMOS overflow: hidden para evitar cortes inesperados */
-    min-height: 70px; /* Le damos una altura base al menú */
+    min-height: 50px; /* Le damos una altura base al menú */
 }
 
 /* 1. Aseguramos el tamaño de la imagen dentro de .logo */
@@ -231,13 +231,16 @@ nav {
     position: absolute;
     left: 20px; /* Un margen fijo a la izquierda se ve más limpio */
     top: 50%;
-    transform: translateY(-50%); /* Centra el logo perfectamente en vertical */
+    transform: translateY(-50%); /* Centra el logo 
+    perfectamente en vertical */
+    filter: contrast(130%);
+    filter: brightness(1.2);
     
     /* 2. Control estricto del tamaño para que no ocupe toda la pantalla */
-    width: auto;
+    width:100vw;
     height: 50px; /* Ajusta este valor al alto que desees para tu logo */
-    max-width: 150px; /* Límite de ancho */
-    object-fit: contain; /* Mantiene la proporción original de la imagen sin deformarla */
+    max-width: 200px; /* Límite de ancho */
+    object-fit: cover; /* Mantiene la proporción original de la imagen sin deformarla */
 }
 
 
