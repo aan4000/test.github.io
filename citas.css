@@ -13,6 +13,45 @@
     --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+
+@font-face {
+    font-family: 'Griffiths';
+    src: local('Griffiths Regular'), local('Griffiths-Regular'),
+        url('Griffiths-Regular.woff2') format('woff2'),
+        url('Griffiths-Regular.woff') format('woff'),
+        url('Griffiths-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  
+  @font-face {
+    font-family: 'Mont';
+    src: local('Mont Bold'), local('Mont-Bold'),
+        url('Mont-Bold.woff2') format('woff2'),
+        url('Mont-Bold.woff') format('woff'),
+        url('Mont-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+
+  html, body,main,*,*::before{
+
+    font-family: "mont";
+}
+
+
+
+
+
+
+
+
+
+
+
+
 body {
     margin: 0;
     padding: 20px;
@@ -101,8 +140,6 @@ h2 {
    ========================================================================== */
 #showTerms {
     position: absolute;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%); /* Centra el modal exactamente en el medio */
     z-index: 100; /* Asegura que quede por encima del formulario y los horarios */
     width: 90%;
@@ -114,9 +151,10 @@ h2 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     box-sizing: border-box;
     display: none; /* Oculto inicialmente (actívalo agregando la clase .active con JS) */
-
     .active{
-        display: block;
+        display: flex;
+        animation: entrada 0.60s ease;
+        opacity: 0;
     }
 
 }
@@ -214,7 +252,7 @@ details[open] summary::before {
 
 .accordion-content p {
     margin: 0;
-    font-size: 0.95rem;
+    font-size: 1.25rem;
     color: #fff;
 }
 
@@ -231,7 +269,30 @@ img {
     opacity: 0.75;
 }
 
-/* Animaciones */
+/* ANIMACIONES */
+
+@keyframes entrada {
+
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
 details p {
     padding: 0.5rem 0;
     animation: fade 0.3s ease;
@@ -294,3 +355,5 @@ details p {
         padding: 1.5rem;
     }
 }
+
+

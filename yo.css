@@ -1,0 +1,186 @@
+/* ==========================================
+   Sección Biografía Profesional
+   ========================================== */
+
+html, body, main, *, *::before, *::after {
+  font-family: "Mont", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  /* background: linear-gradient(90deg, #EABAA5 30px, #4499EE 90%); */
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 800, 'GRAD' 0, 'opsz' 80;
+}
+
+/* ==========================================================================
+   2. TIPOGRAFÍAS & FUENTES
+   ========================================================================== */
+@font-face {
+  font-family: 'Griffiths';
+  src: local('Griffiths Regular'), local('Griffiths-Regular'),
+       url('Griffiths-Regular.woff2') format('woff2'),
+       url('Griffiths-Regular.woff') format('woff'),
+       url('Griffiths-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mont';
+  src: local('Mont Bold'), local('Mont-Bold'),
+       url('Mont-Bold.woff2') format('woff2'),
+       url('Mont-Bold.woff') format('woff'),
+       url('Mont-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+.tangerine-regular { font-family: "Tangerine", cursive; font-weight: 400; }
+.tangerine-bold { font-family: "Tangerine", cursive; font-weight: 700; }
+
+
+
+
+
+
+
+
+
+
+
+
+.bio-section {
+  padding: 5rem 1.5rem;
+  /* background: linear-gradient(90deg, #EABAA5 80px, #494e70a8 80%); */
+  color: #07080a;
+  font-family:"mont" ;
+}
+
+.bio-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+/* Imagen y Badge */
+.bio-image-wrapper {
+  position: relative;
+}
+
+.bio-img {
+  width: 70%;
+  height: 420px;
+  transform: translate(30%);
+  background-size:cover;
+    object-fit: center;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  background-color: #e2e8f0; /* Color de respaldo si no carga la imagen */
+}
+
+.bio-experience-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background-color:#494E70 ;
+  color: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(13, 110, 253, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.badge-number {
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.badge-text {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 0.25rem;
+}
+
+/* Textos */
+.bio-subtitle {
+  color: #000808;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.bio-title {
+  font-size: 2.25rem;
+  font-family: "griffiths", serif;
+  font-weight: 800;
+  margin: 0.3rem 0;
+  color:  #494E70;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.bio-role {
+  font-size: 1.05rem;
+  color: #e29e81;;
+  text-shadow: 1px 1px 2px black;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.bio-description {
+  color: #051225;
+  line-height: 1.7;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Métricas */
+.bio-stats {
+  display: flex;
+  gap: 2rem;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1.5rem;
+}
+
+.stat-item h4 {
+  font-size: 1.5rem;
+  color: #1e293b;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.stat-item p {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Adaptación a Pantallas Pequeñas */
+@media (max-width: 768px) {
+  .bio-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .bio-experience-badge {
+    right: 10px;
+    bottom: -15px;
+  }
+
+  .bio-stats {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+}

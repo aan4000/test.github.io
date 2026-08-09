@@ -54,9 +54,10 @@ terms.addEventListener("change",()=>{
 
 });
 
+const in_btn = document.querySelector(".in_btn");
+
  btnCitas.disabled = true
  btnCitas.style.opacity = "55%"
- 
  
  bterms.addEventListener("click",()=>{
    
@@ -65,3 +66,13 @@ terms.addEventListener("change",()=>{
     btnCitas.disabled = false
 
  });
+
+
+
+
+
+
+
+
+
+ 

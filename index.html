@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="img/png"  href="logo_Doctora.jpg">
     <title>Dra. Heydy Rodriguez</title>
-
     
     <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
      <!-- icons -->
@@ -37,6 +36,9 @@
 
     <body>
 
+   
+
+        
 <div class="container">
 
     <!-- Botón del menú (solo uno) -->
@@ -54,7 +56,7 @@
             </p>
         </div>
 
-        <img class="img_header" src="1000505478.jpg" alt="Fotografía de la Dra. Heydy Rodriguez">
+        <img class="img_header" src="1000505478.jpg" alt="Fotografía de la Dra. Heydy Rodriguez"  loading="eager">
     </header>
 
     <!-- ================= NAV ================= -->
@@ -62,7 +64,7 @@
 
     <nav id="respNav">
 
-        <img  class="logo" src="logo_Doctora.jpg" alt="Logo" srcset="">
+        <img  class="logo" src="/logo_Doctora.jpg" alt="Logo" srcset="">
 
         <ul class="menu-principal ">
             <li><a href="#">Página Principal</a></li>
@@ -87,7 +89,8 @@
                 </ul>
             </li>
 
-            <li><a href="about.html">Acerca de mí</a></li>
+            <li><a href="yo.html">Acerca de mí</a></li>
+            <li><a href="/about.html">Politicas</a></li>
             <li><a href="contactanos.html">Contáctame</a></li>
             
         </ul>
@@ -101,41 +104,75 @@
             <ul class="resp_mobile">
                 <li>
                     <a href="#">
-                        <ion-icon name="home"></ion-icon>
+                        <ion-icon class="icn"   name="home"   ></ion-icon>
                         Página principal
                     </a>
                 </li>
-                
-                <li class="tiene-submenu">
-                    <a href="#">
-                        <ion-icon name="bandage"></ion-icon>
-                        Servicios
-                    </a>
-                    <div class="submenu">
 
-                        <ul >
-                            <li><a href="#">Reducción Abierta</a></li>
-                            <li><a href="#">Fijaciones</a></li>
-                            <li><a href="#">Tenosinovectomía</a></li>
-                        </ul>
-                    </div>
-
+                 <li>
                     
-                </li>
+                    <a href="yo.html">
+                        <ion-icon class="icn"          name="briefcase"></ion-icon>
+                        Acerca de mí
+                    </a>     
+                              
+                    </li>
                 
                 <li>
                     <a href="about.html">
-                        <ion-icon name="medkit"></ion-icon>
-                        Acerca de mí
+                        <ion-icon  class="icn"  name="medkit"></ion-icon>
+                        Politicas
                     </a>
-                </li>
-                
+                </li>          
+               
+
                 <li>
+                
                     <a href="contactanos.html">
-                        <ion-icon name="mail-open"></ion-icon>
+                        <ion-icon  class="icn"     name="mail-open"></ion-icon>
                         Contáctame
                     </a>
                 </li>
+
+
+
+
+                
+                         <li class="tiene-submenu ">
+                <a href="#">
+                    <ion-icon name="medical"></ion-icon>                
+                    Servicios ▾
+                
+                </a>
+                <ul class="submenu  detalles">
+                    
+                    <h2>Detalles</h2>
+            <p>
+                <li>Consulta especializada en Ortopedia y Traumatología.</li>
+                <li>Evaluación y tratamiento de fracturas y lesiones traumáticas.</li>
+                <li>Atención de lesiones deportivas.</li>
+                <li>Diagnóstico y manejo del dolor musculoesquelético.</li>
+                <li>Tratamiento de tendinitis, bursitis y lesiones de tendones y ligamentos.</li>
+                <li>Manejo de artrosis y enfermedades degenerativas.</li>
+                <li>Evaluación de lesiones de hombro, codo, muñeca y mano.</li>
+                <li>Evaluación de lesiones de cadera, rodilla, tobillo y pie.</li>
+                <li>Infiltraciones articulares y de tejidos blandos.</li>
+                <li>Valoración preoperatoria y seguimiento postoperatorio.</li>
+            </p>
+                </ul>
+            </li>
+
+
+
+
+                   
+
+
+
+
+
+
+
             </ul>
             
             
@@ -184,10 +221,12 @@
 
             <div class="img_section">
 
+                <div class="img_cont" ></div>
+
                 <img
                     class="description_img"
-                    src="fontoparascroleo2.png"
-                    alt="Imagen ilustrativa de ortopedia">
+                    src="/foto para carnet.png"
+                    alt="Imagen ilustrativa de ortopedia"       loading="lazy" >
 
             </div>
 
@@ -200,7 +239,7 @@
                         
                     </h2>
                     
-                    <p>
+                    <p   class="text-desc" >
 
 
                     Atencion ortopedica basada en evidencia, empatia y resultados, especialista en lesiones deportivas, dolor musculoesqueletico y recuperacion funsional.
@@ -211,10 +250,15 @@
                     
                     
                 </p>
+
+                <video  controls   >
+
+                  <source  src="videoOrtopeda.mp4" type="video/mp4"> 
+                </video>
                 
                 
             </section>
-            <a   class="button_citas"   href="citas.html " target="_blank">Haz tu Cita  »</a>
+            <a   class="button_citas"   href="citas.html " >Haz tu Cita  »</a>
             
             
 
@@ -223,52 +267,42 @@
         </main>
 
         <!-- ================= GALERÍA ================= -->
-<section class="bottom_section">
+
+       <section class="bottom_section">
+  <h2>Galería </h2>
   <div class="card">
-    <img src="operacion2.0.png" alt="Destino">
+    <img src="evaluacioncadera.png" alt="Proyecto 1">
     <div class="info">
-      <h3>titulo</h3>
-      <p>Describe el procedimiento .</p>
+      <h3>Título del Proyecto</h3>
+      <p>Una breve descripción moderna y elegante sobre esta tarjeta.</p>
     </div>
   </div>
-  <div class="card">
-    <img src="evaluacioncadera.png" alt="Destino">
+
+   <div class="card">
+    <img src="/artrosis.png" alt="Proyecto 2">
     <div class="info">
-      <h3>Evaluacion</h3>
-      <p>Evaluacion cadera, mano y pie .</p>
+      <h3>Título del Proyecto</h3>
+      <p>Una breve descripción moderna y elegante sobre esta tarjeta.</p>
     </div>
   </div>
 
   <div class="card">
-    <img src="artrosis.png" alt="descrition">
+    <img src="procedimientoMano.png" alt="Proyecto 1">
     <div class="info">
-      <h3>Terapia</h3>
-      <p>Manejo de Artrosis.</p>
+      <h3>Título del Proyecto</h3>
+      <p>Una breve descripción moderna y elegante sobre esta tarjeta.</p>
     </div>
   </div>
   <div class="card">
-    <img src="1000505684.jpg" alt="descrition">
+    <img src="procedimiento1.png" alt="Proyecto 1">
     <div class="info">
-      <h3>titulo</h3>
-      <p>Discribe el procedimiento.</p>
+      <h3>Título del Proyecto</h3>
+      <p>Una breve descripción moderna y elegante sobre esta tarjeta.</p>
     </div>
   </div>
-  <div class="card">
-    <img src="procedimientoMano.png" alt="descrition">
-    <div class="info">
-      <h3>titulo</h3>
-      <p>Discribe el procedimiento.</p>
-    </div>
-  </div>
-  <div class="card">
-    <img src="procedimiento1.png" alt="descrition">
-    <div class="info">
-      <h3>titulo</h3>
-      <p>Discribe el procedimiento.</p>
-    </div>
-  </div>
+
+ 
 </section>
-
         <!-- ================= FOOTER ================= -->
 
         <footer>
@@ -294,9 +328,9 @@
                 <h3>Dirección</h3>
 
                 <p>
-                    Av. República de Colombia #80,
-                    Santo Domingo,
-                    República Dominicana.
+                  Calle Prof. Aliro Paulino #11, Ensanche Naco. Republica Dominicana. <br>
+                  Santo Domingo, Distrito Nacional.
+                </p>
 
                         
 
@@ -327,7 +361,7 @@
                 <h3>Horarios</h3>
 
                 <p>
-                   Consultorio: 9:00 AM 
+                   Consultorio: 9:00 AM <br>
                    Citas en general: 90:00 AM - 12:00 PM 
 
                 </p>
@@ -339,7 +373,8 @@
              &copy; 2026 Dra. Heydy Rodriguez
              Todos los derechos reservados.
             </p>
-        </footer>
+            
+      
 
     </div>
     <script src="script.js"></script>
