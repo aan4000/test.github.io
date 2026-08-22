@@ -1,27 +1,31 @@
-
-//  navbar
+// navbar.js
 
 document.addEventListener("DOMContentLoaded", () => {
     const navContainer = document.getElementById("nav-container");
 
     if (!navContainer) return;
 
-    // Carga asíncrona del archivo nav.html
-    fetch("nav.html")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("No se pudo cargar la barra de navegación.");
-            }
-            return response.text();
-        })
-        .then(data => {
-            // Inyectar el HTML cargado en el contenedor
-            navContainer.innerHTML = data;
+    // Obtener la barra de navegación desde el almacenamiento local
+    const cachedNav = sessionStorage.getItem("navHTML");
 
-            // Asignar los eventos de apertura/cierre una vez inyectado el HTML
-            initMenuEvents();
-        })
-        .catch(error => console.error("Error al cargar el nav:", error));
+    if (cachedNav) {
+        // Inyección instantánea desde memoria: evita parpadeos o descargas
+        navContainer.innerHTML = cachedNav;
+        initMenuEvents();
+    } else {
+        // Primera visita: realiza el fetch por única vez
+        fetch("nav.html")
+            .then(response => {
+                if (!response.ok) throw new Error("No se pudo cargar la barra de navegación.");
+                return response.text();
+            })
+            .then(data => {
+                sessionStorage.setItem("navHTML", data);
+                navContainer.innerHTML = data;
+                initMenuEvents();
+            })
+            .catch(error => console.error("Error al cargar el nav:", error));
+    }
 });
 
 function initMenuEvents() {
@@ -41,4 +45,3 @@ function initMenuEvents() {
         });
     }
 }
-

@@ -106,6 +106,20 @@ textarea {
     box-sizing: border-box;
 }
 
+
+form input:nth-child(2n+2):focus-within{
+
+    background: rgba(247, 192, 160, 0.137);
+    color: white;
+}
+
+form textarea:focus{
+    
+    background: rgba(247, 192, 160, 0.116);
+    color: white;
+ }
+
+
 h2 {
     color: var(--color-text);
     text-align: center;
