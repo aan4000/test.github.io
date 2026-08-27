@@ -4,7 +4,7 @@ const bterms = document.getElementById("bterms");
 const showTerms = document.getElementById("showTerms");
 const btnContacto = document.getElementById('button');
 const formContacto = document.getElementById('form');
-const campos = document.querySelectorAll('.inp, .area');
+const campos = document.querySelectorAll('.inp, .area, .consultorios');
 
 formContacto.addEventListener('submit', function(event) {
   event.preventDefault();

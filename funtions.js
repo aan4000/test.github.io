@@ -1,15 +1,27 @@
 // PROGRAMAR CITAS
 const terms = document.getElementById("terms");
 const showTerms = document.getElementById("showTerms");
-const btems = document.getAnimations("bterms")
+const bterms = document.getElementById("bterms"); 
 const formCitas = document.getElementById('form');
 const btnCitas = document.getElementById('button');
+
+const successModal = document.getElementById('successModal');
+const errorModal = document.getElementById('errorModal');
+const closeSuccessModal = document.getElementById('closeSuccessModal');
+const closeErrorModal = document.getElementById('closeErrorModal');
 
 function limpiarCamposCitas() {
   ['name', 'date', 'time', 'email', 'message'].forEach(id => {
     const field = document.getElementById(id);
     if (field) field.value = '';
   });
+}
+
+function abrirModal(modal) {
+  if (modal) modal.classList.add('active');
+}
+function cerrarModal(modal) {
+  if (modal) modal.classList.remove('active');
 }
 
 if (formCitas && btnCitas) {
@@ -35,44 +47,35 @@ if (formCitas && btnCitas) {
     emailjs.sendForm(serviceID, templateID, this)
       .then(() => {
         btnCitas.value = 'Agendar cita';
-        alert('¡Tu cita fue enviada correctamente!');
+        abrirModal(successModal);
         limpiarCamposCitas();
       })
       .catch((err) => {
         btnCitas.value = 'Agendar cita';
-        alert('Ocurrió un error al enviar la cita. Intenta nuevamente.');
+        abrirModal(errorModal);
         console.error(err);
       });
   });
 }
 
+if (closeSuccessModal) {
+  closeSuccessModal.addEventListener('click', () => cerrarModal(successModal));
+}
+if (closeErrorModal) {
+  closeErrorModal.addEventListener('click', () => cerrarModal(errorModal));
+}
 
-
-terms.addEventListener("change",()=>{
-
-  showTerms.classList.toggle("active")
-
+terms.addEventListener("change", () => {
+  showTerms.classList.toggle("active");
 });
 
 const in_btn = document.querySelector(".in_btn");
 
- btnCitas.disabled = true
- btnCitas.style.opacity = "55%"
- 
- bterms.addEventListener("click",()=>{
-   
-   btnCitas.style.opacity = "1"
-    showTerms.style.display = "none"
-    btnCitas.disabled = false
+btnCitas.disabled = true;
+btnCitas.style.opacity = "55%";
 
- });
-
-
-
-
-
-
-
-
-
- 
+bterms.addEventListener("click", () => {
+  btnCitas.style.opacity = "1";
+  showTerms.style.display = "none";
+  btnCitas.disabled = false;
+});

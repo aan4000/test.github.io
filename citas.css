@@ -3,15 +3,16 @@
    ========================================================================== */
 :root {
     --color-bg-main: #f5f7fb;
-    --color-primary: #4460AA;
-    --color-primary-dark: #2f4f8a;
+    --color-primary: #2648a5;
+    --color-primary-dark: #133b85;
     --color-text: #ffffff;
-    --color-card-bg: rgba(12, 99, 230, 0.15);
+    --color-card-bg:  #3f44688a;
     --radius: 10px;
     --transition: 0.3s ease;
     --shadow: 0 4px 12px rgba(0,0,0,0.15);
     --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
+
 
 
 @font-face {
@@ -67,10 +68,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 4rem;
+    gap: 2rem;
     width: 100%;
     max-width: 1100px;
-    margin: 0 auto;
+    margin: 50px auto;
     padding: 1.5rem;
     border-radius: 1rem;
 }
@@ -148,6 +149,34 @@ h2 {
     background-color: var(--color-primary-dark);
     transform: translateY(-2px);
 }
+
+
+select{
+    border: none;
+    padding: .50em;
+    border-radius: 5px;
+    transition: all .60s ease;
+    color: #e08b67;
+    font-size: clamp(21px,20px);
+    color: #494E70;
+    accent-color: green;
+
+}
+
+
+select option{
+
+   
+    padding: .25em;
+    font-family: "Mont";    
+    font-weight: 400;
+    font-size:18px;
+    border-radius: 5px;
+    color: #494E70;
+    text-shadow: 1px 1px 2px black;
+}
+
+
 
 /* ==========================================================================
    4. MODAL TÉRMINOS Y CONDICIONES (OVERLAY)
@@ -371,3 +400,147 @@ details p {
 }
 
 
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.modal-overlay.active {
+    display: flex;
+}
+
+/* ===== Overlay de modales ===== */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.modal-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+/* ===== Caja del modal ===== */
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px 28px;
+  max-width: 380px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-20px);
+  transition: transform 0.25s ease;
+}
+
+.modal-overlay.active .modal-content {
+  transform: translateY(0);
+}
+
+/* ===== Icono ===== */
+.modal-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 16px;
+}
+
+.modal-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== Éxito (check verde) ===== */
+.checkmark-circle {
+  stroke: #4bb543;
+  stroke-width: 2;
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  animation: dibujarCirculo 0.5s ease forwards;
+}
+
+.checkmark-check {
+  stroke: #4bb543;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: dibujarCheck 0.3s ease forwards 0.4s;
+}
+
+/* ===== Error (X roja) ===== */
+.errormark-circle {
+  stroke: #e63946;
+  stroke-width: 2;
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  animation: dibujarCirculo 0.5s ease forwards;
+}
+
+.errormark-x {
+  stroke: #e63946;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: dibujarCheck 0.3s ease forwards 0.4s;
+}
+
+@keyframes dibujarCirculo {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes dibujarCheck {
+  to { stroke-dashoffset: 0; }
+}
+
+/* ===== Texto ===== */
+.modal-title {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.modal-title.error-title {
+  color: #e63946;
+}
+
+.modal-message {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* ===== Botón ===== */
+.modal-btn {
+  background: #4bb543;
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.modal-btn:hover {
+  background: #3f9c39;
+}
+
+.modal-btn.error-btn {
+  background: #e63946;
+}
+
+.modal-btn.error-btn:hover {
+  background: #c62d39;
+}

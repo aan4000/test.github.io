@@ -31,7 +31,6 @@
   --color-blue-accent: #3d7dc9;
   --color-terracotta: #cf7c56;
   --color-terracotta-dark: #b5623f;
-  --color-terracotta-gradient: #9e370a;
   --color-salmon: #e9c6b3;
 
   /* Neutros y texto */
@@ -769,7 +768,7 @@ video {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: var(--fs-body);
+  font-size: var(--fs-body);  
   width: 90%;
   max-width: 600px;
   padding: clamp(1.5rem, 5vw, 5rem);
@@ -785,6 +784,9 @@ video {
   width: 100%;
   height: 80%;
 }
+
+
+
 
 form input:focus-within {
   background: rgba(212, 182, 187, 0.25);
@@ -912,7 +914,7 @@ input[type="reset"]:hover {
    la clase .active (usa el ::before, ya que ::backdrop no existe en ese
    caso). Se dejan ambas para cubrir los dos escenarios. */
 #showTerms::backdrop {
-  background: rgba(20, 22, 36, 0.55);
+  background: rgb(20, 22, 36);
   backdrop-filter: blur(2px);
 }
 
@@ -986,7 +988,7 @@ footer {
   grid-area: footer;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 20px;
   padding: var(--space-section-y) 8%;
   color: #f3f4f6;
   background: rgba(63, 68, 104, 0.92);
