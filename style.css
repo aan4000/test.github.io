@@ -914,8 +914,8 @@ input[type="reset"]:hover {
    la clase .active (usa el ::before, ya que ::backdrop no existe en ese
    caso). Se dejan ambas para cubrir los dos escenarios. */
 #showTerms::backdrop {
-  background: rgb(20, 22, 36);
-  backdrop-filter: blur(2px);
+  /* background: rgb(20, 22, 36);
+  backdrop-filter: blur(2px); */
 }
 
 #showTerms.active::before {
@@ -997,6 +997,12 @@ footer {
   align-items: start;
 }
 
+
+.contactp-items{
+
+
+}
+
 footer h3 {
   margin-bottom: 20px;
   font-size: var(--fs-footer-title);
@@ -1014,22 +1020,29 @@ footer p {
   color: #d1d5db;
 }
 
+
+/* seccion para organizar los contactos  */
 .contacto-item {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 14px;
-  transition: transform 0.2s ease;
-}
-
-.contacto-item:hover {
-  transform: translateX(4px);
-}
-
-.contacto-item img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
+  align-items:center; 
+   flex-wrap:wrap;
+   margin: 2px auto;
+   gap: 15px;
+   margin-bottom: 14px;
+   transition: transform 0.2s ease;
+  }
+  
+  .contacto-item:hover {
+    transform: translateX(4px);
+  }
+  
+  
+  .contacto-item img {
+    
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  border-radius: 50%;
   opacity: 0.9;
 }
 

@@ -27,7 +27,7 @@
         <section id="showTerms" class="terms-hidden">
             <p>
 
-                <strong> Aviso de privacidad y consentimiento </strong>
+                <strong> Aviso de privacidad y consentimiento </strong><br>
                 La información proporcionada mediante este formulario será utilizada exclusivamente para gestionar su solicitud de cita y comunicarnos con usted en relación con nuestros servicios médicos.Sus datos personales y cualquier información relacionada con su salud serán tratados de manera confidencial y conforme a la legislación La solicitud de cita no constituye una consulta ni un diagnóstico 
                 <button id="bterms" type="button">Aceptar</button>
             </p>
@@ -67,7 +67,7 @@
             placeholder="Escriba o seleccione un consultorio"
             autocomplete="off">
             <datalist id="lista-consultorios">
-            <option value="Ciclid">
+            <option value="CLISID">
             <option value="Gastrocard (Ovando)">
             <option value="Gastrocard">
             <option value="Centro de Especialidades Médicas (San Antonio de Guerra)">
@@ -126,10 +126,7 @@
             </details>
         </div>
 
-        <script src="load-nav.js"></script>
-    </div>
-
-    <!-- Modal de Éxito -->
+        <!-- Modal de Éxito -->
     <div id="successModal" class="modal-overlay">
         <div class="modal-content">
             <div class="modal-icon success">
@@ -138,7 +135,7 @@
                     <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
                 </svg>
             </div>
-            <h3 class="modal-title">¡Cita Agendada!</h3>
+            <h3 class="modal-title">¡Solicitud de Cita enviada!</h3>
             <p class="modal-message">Su solicitud fue enviada correctamente. Recibirá una confirmación por correo electrónico.</p>
             <button id="closeSuccessModal" class="modal-btn">Entendido</button>
         </div>
@@ -157,6 +154,15 @@
             <p class="modal-message">Ocurrió un problema. Por favor, intente nuevamente.</p>
             <button id="closeErrorModal" class="modal-btn error-btn">Reintentar</button>
         </div>
+    </div>
+
+
+
+
+
+
+
+        <script src="load-nav.js"></script>
     </div>
 
     <script src="funtions.js"></script>
